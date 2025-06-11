@@ -167,7 +167,6 @@ function Library:Load(cfgs)
 
 	cfgs = cfgs or {}
 	cfgs.Title = cfgs.Title or "Window"
-	cfgs.KeyAuth = cfgs.KeyAuth or nil
 	cfgs.ToggleButton = cfgs.ToggleButton or ""
 	cfgs.BindGui = cfgs.BindGui or Enum.KeyCode.RightControl
 
@@ -176,16 +175,6 @@ function Library:Load(cfgs)
 		GUI:Destroy()
 	end
 	
-	local auth = game:HttpGet("https://raw.githubusercontent.com/marcopolo655/nothing/refs/heads/main/just%20text.txt")
-	auth = auth:gsub("\n", "")
-		if cfgs.KeyAuth == auth then
-		print("Checked")
-	elseif cfgs.KeyAuth == nil then
-		while true do end
-	else 
-		while true do end
-	end
-
 	Library.Window = GUI
 
 	local canvas_group = Create("CanvasGroup", {
@@ -3147,7 +3136,7 @@ local RunService = game:GetService("RunService")
 
 local tools = { Signals = {} }
 
-local themes = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lunor-Development/Dependencies/refs/heads/main/Apples/Themes"))()
+local themes = loadstring(game:HttpGet("https://raw.githubusercontent.com/Just3itx/3itx-UI-LIB/refs/heads/main/themes"))()
 
 local currentTheme = themes.default
 local themedObjects = {}
