@@ -2975,6 +2975,7 @@ function Element:New(Idx, Config)
     Config.Callback = Config.Callback or function() end
 
     local Textbox = {
+	Title = Config.Title
         Value = Config.Default or "",
         Callback = Config.Callback,
         Type = "Textbox",
