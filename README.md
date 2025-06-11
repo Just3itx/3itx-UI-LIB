@@ -112,7 +112,11 @@ MainSection:AddTextbox({
     end
 })
 
+local Config = main:AddTab("Config")
+FlagsManager:SetLibrary(lib)
+FlagsManager:SetIgnoreIndexes({})
+FlagsManager:SetFolder("Config/GameName")
+FlagsManager:InitSaveSystem(tabs.Config)
 
 lib:Notification('Hello', 'Hello, Thanks for using 3itx-UI-Lib',3)
-
 ```
