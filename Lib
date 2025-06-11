@@ -2970,7 +2970,7 @@ local Element = {}
 Element.__index = Element
 Element.__type = "Textbox"
 
-function Element:New(Config)
+function Element:New(Idx, Config)
 	assert(Config.Title, "Textbox - Missing Title")
 	Config.Description = Config.Description or nil
 	Config.PlaceHolder = Config.PlaceHolder or ""
@@ -2979,11 +2979,12 @@ function Element:New(Config)
 	Config.TextDisappear = Config.TextDisappear or false
 	Config.Callback = Config.Callback or function() end
 
-	-- local Textbox = {
-	-- 	Value = Config.Default or "",
-	-- 	Callback = Config.Callback or function(Value) end,
-	-- 	Type = "Input",
-	-- }
+
+	local Textbox = {
+		Value = Config.Default or "",
+		Callback = Config.Callback,
+		Type = "Textbox",
+	}
 
 
 	local TextboxFrame = require(Components.element)(Config.Title, Config.Description, self.Container)
