@@ -2980,7 +2980,7 @@ function Element:New(Idx, Config)
         Type = "Textbox",
     }
 
-    local TextboxFrame = require(Components.element)(Config.Title, Config.Description, self.Container)
+    local TextboxFrame = require(Components.element)("Test", Config.Description, self.Container)
 
     local textbox = Create("TextBox", {
         CursorPosition = -1,
