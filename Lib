@@ -174,7 +174,7 @@ function Library:Load(cfgs)
 		print("Cannot create more than one window.")
 		GUI:Destroy()
 	end
-
+	
 	Library.Window = GUI
 
 	local canvas_group = Create("CanvasGroup", {
@@ -2966,7 +2966,8 @@ local Element = {}
 Element.__index = Element
 Element.__type = "Textbox"
 
-function Element:New(Idx, Config)
+function Element:New(Config)
+    assert(Config, "Textbox - Missing Config table")
     assert(Config.Title, "Textbox - Missing Title")
     Config.Description = Config.Description or nil
     Config.PlaceHolder = Config.PlaceHolder or ""
@@ -3033,7 +3034,6 @@ function Element:New(Idx, Config)
         end
     end)
 
-    self.Library.Flags[Idx] = Textbox
     return Textbox
 end
 
