@@ -4,7 +4,7 @@
 ## Example
 
 ```lua
-  local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Just3itx/3itx-UI-LIB/refs/heads/main/Lib"))() 
+   local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Just3itx/3itx-UI-LIB/refs/heads/main/Lib"))() 
   local FlagsManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Just3itx/3itx-UI-LIB/refs/heads/main/ConfigManager"))()
 
   local main = lib:Load({
@@ -101,6 +101,13 @@ MainSection:AddButton({
 end,
 })
 
+MainSection:AddBind("JumpKeybind", {
+    Title = "Jump",
+    Default = Enum.KeyCode.Space,
+    Callback = function() print("Pressed") end
+})
+
+
 MainSection:AddTextbox({
     Title = "Textbox",
     Default = "",
@@ -116,7 +123,7 @@ local Config = main:AddTab("Config")
 FlagsManager:SetLibrary(lib)
 FlagsManager:SetIgnoreIndexes({})
 FlagsManager:SetFolder("Config/GameName")
-FlagsManager:InitSaveSystem(tabs.Config)
+FlagsManager:InitSaveSystem(Config)
 
 lib:Notification('Hello', 'Hello, Thanks for using 3itx-UI-Lib',3)
 ```
